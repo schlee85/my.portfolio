@@ -119,11 +119,12 @@ body {
 /* Content */
 #content {
 	position: relative;
+	padding-bottom: 10rem;
 }
 
 /* Footer */
 #footer {
-	padding: 40px 0;
+	padding: 6rem 0;
 	background: #000;
 	color: #fff;
 	text-align: center;
