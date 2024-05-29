@@ -1,0 +1,22 @@
+/* https://gwfh.mranftl.com/fonts/noto-sans-kr?subsets=korean */
+/* noto-sans-kr-300 - korean */
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/noto-sans-kr-300.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-kr-regular - korean */
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/noto-sans-kr-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* noto-sans-kr-700 - korean */
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	src: url('../fonts/noto-sans-kr-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Seungchan's Portfolio Website</title>
+		<link rel="stylesheet" href="./css/ui.css">
+		<script src="./js/jquery-3.7.1.min.js"></script>
+		<script src="./js/swiper-11.1.3.min.js"></script>
+		<script src="./js/ui.js"></script>
+	</head>
+	<body>
+		<div class="wrap">
+			<div id="skipnavi">
+				<a href="#content">본문 바로가기</a>
+			</div>
+			<header id="header">
+				<div class="inner">
+					<h1>
+						<a href="/">
+							<img src="./images/common/logo.svg" width="170" alt="seungchan lee">
+						</a>
+					</h1>
+					<div class="links">
+						<a href="#" target="_blank" title="바로가기">
+							<i class="ic_github"><span class="blind">github</span></i>
+						</a>
+					</div>
+				</div>
+			</header>
+			<nav id="nav">
+				<ul class="gnb">
+					<li class="active">
+						<a href="#" data-href="home">
+							<i class="ic_home"><span class="blind">Home</span></i>
+						</a>
+						<span class="sub">Home</span>
+					</li>
+					<li>
+						<a href="#" data-href="about">
+							<i class="ic_about"><span class="blind">About</span></i>
+						</a>
+						<span class="sub">About</span>
+					</li>
+					<li>
+						<a href="#" data-href="work">
+							<i class="ic_work"><span class="blind">Work</span></i>
+						</a>
+						<span class="sub">Work</span>
+					</li>
+					<li>
+						<a href="#" data-href="contact">
+							<i class="ic_contact"><span class="blind">Contact</span></i>
+						</a>
+						<span class="sub">Contact</span>
+					</li>
+				</ul>
+			</nav>
+			<main id="content">
+				<section class="sec_home" data-anchor="home">
+					<h2 class="blind">Home</h2>
+					<strong class="tit">For a beautiful<br class="mo"> <span class="point">UI environment</span></strong>
+					<p class="txt">아름다운 UI 환경을 위하여</p>
+					<div class="btns">
+						<button type="button" class="btn_goabout" data-href="about">Go About <i class="ic_arrow"></i></button>
+					</div>
+				</section>
+				<section class="sec_about" data-anchor="about">
+					<div class="inner">
+						<div class="head">
+							<h2 class="s_tit">UI 개발자(퍼블리셔)<br>이승찬 입니다.</h2>
+							<div class="profile">
+								<div class="img">
+									<img src="./images/contents/img_profile.png" alt="">
+								</div>
+								<p class="s_txt">
+									경력 10년+<br> 개발자로서의 마인드를 확장해 나가고 있으며, 보다 나은 경험을 드리기 위해 노력합니다.
+								</p>
+							</div>
+						</div>
+						<div class="cont">
+							<div class="tab_wrap" data-ui="tabs">
+								<div class="tab_head">
+									<a href="#tabCont01" class="ctrlTab active">소개</a>
+									<a href="#tabCont02" class="ctrlTab">기술</a>
+								</div>
+								<div class="tab_cont">
+									<div id="tabCont01">
+										<p class="s_txt">
+											웹 퍼블리싱은 사용자 중심의 웹사이트 제작에 초점을 맞추는 것입니다.<br>
+											이를 위해, 사용자 경험과 인터페이스에 대한 깊은 이해를 바탕으로, 사용자 친화적인 웹사이트를 개발해야 합니다.
+											뿐만 아니라, 웹 표준과 웹 접근성을 준수하여, 모든 사용자가 웹사이트를 편리하게 사용할 수 있도록 합니다.
+										</p>
+										<p class="s_txt">
+											저는 디자인을 시작으로 퍼블리싱까지 많은 것을 배워 왔습니다.
+											그럼에도, UI 공부를 하다보면 매번 새롭고 끝이 없다는 것을 느낍니다.
+											내일은 어떤 기술이 나올지 기대됩니다.
+										</p>
+									</div>
+									<div id="tabCont02" style="display: none;">
+										<p class="s_txt">Skiils -
+											<span class="ic_wrap">
+												<i class="ic_html" title="HTML5"></i>
+												<i class="ic_css" title="CSS3"></i>
+												<i class="ic_sass" title="SASS"></i>
+												<i class="ic_javascript" title="Javascript"></i>
+												<i class="ic_reactjs" title="ReactJS"></i>
+												<i class="ic_nextjs" title="NextJS"></i>
+												<i class="ic_git" title="Git"></i>
+											</span>
+										</p>
+										<p class="s_txt">Tools -
+											<span class="ic_wrap">
+												<i class="ic_vscode" title="VSCode"></i>
+												<i class="ic_figma" title="Figma"></i>
+												<i class="ic_photoshop" title="Photoshop"></i>
+												<i class="ic_slack" title="Slack"></i>
+												<i class="ic_notion" title="Notion"></i>
+											</span>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="sec_work" data-anchor="work">
+					<div class="inner">
+						<div class="head">
+							<h2 class="s_tit">이러한 경험을<br> 해왔습니다.</h2>
+							<p class="s_txt">함께 한 동료들에게 감사드립니다.</p>
+						</div>
+						<div class="cont">
+							<div class="swiper" data-ui="swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide">
+										<div class="work_wrap">
+											<div class="work_item">
+												<a href="#pop_kbbank" data-ui="popup">
+													<img src="./images/work/img_work_kbbank.png" alt="">
+													<span class="overlay">국민은행 기업 운영 (2023)</span>
+												</a>
+											</div>
+											<div class="work_item">
+												<a href="#pop_thehyundai" data-ui="popup">
+													<img src="./images/work/img_work_thehyundai.png" alt="">
+													<span class="overlay">현대백화점 고도화 (2022)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="work_wrap">
+											<div class="work_item">
+												<a href="#pop_ssg" data-ui="popup">
+													<img src="./images/work/img_work_ssg.png" alt="">
+													<span class="overlay">SSG닷컴 운영 (2022)</span>
+												</a>
+											</div>
+											<div class="work_item">
+												<a href="#pop_lgcns" data-ui="popup">
+													<img src="./images/work/img_work_lgcns.png" alt="">
+													<span class="overlay">LGCNS singlex portal (2021)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="work_wrap">
+											<div class="work_item">
+												<a href="#pop_runable" data-ui="popup">
+													<img src="./images/work/img_work_runable.png" alt="">
+													<span class="overlay">러너블 구축 (2021)</span>
+												</a>
+											</div>
+											<div class="work_item">
+												<a href="#pop_shinhanbank" data-ui="popup">
+													<img src="./images/work/img_work_shinhanbank.png" alt="">
+													<span class="overlay">신한은행 MY자산 고도화 (2021)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="work_wrap">
+											<div class="work_item">
+												<a href="#pop_tworld" data-ui="popup">
+													<img src="./images/work/img_work_tworld.png" alt="">
+													<span class="overlay">티월드 운영 (2020)</span>
+												</a>
+											</div>
+											<div class="work_item">
+												<a href="#pop_kbcard" data-ui="popup">
+													<img src="./images/work/img_work_kbcard.png" alt="">
+													<span class="overlay">국민카드 차세대 고도화 (2019)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="work_wrap">
+											<div class="work_item">
+												<a href="#pop_hanwhalife" data-ui="popup">
+													<img src="./images/work/img_work_hanwhalife.png" alt="">
+													<span class="overlay">한화생명 온슈어 개편 (2018)</span>
+												</a>
+											</div>
+											<div class="work_item">
+												<a href="#pop_shinhanbank2" data-ui="popup">
+													<img src="./images/work/img_work_shinhanbank.png" alt="">
+													<span class="overlay">신한은행 쉐어드&amp;판클럽 통합 구축 (2018)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="work_wrap">
+											<div class="work_item">
+												<a href="#pop_lottelife" data-ui="popup">
+													<img src="./images/work/img_work_lottelife.png" alt="">
+													<span class="overlay">롯데손해보험 퇴직연금 구축 (2017)</span>
+												</a>
+											</div>
+											<div class="work_item">
+												<a href="#pop_jejubank" data-ui="popup">
+													<img src="./images/work/img_work_jejubank.png" alt="">
+													<span class="overlay">제주은행 제주S뱅킹 (2017)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="work_wrap">
+											<div class="work_item">
+												<a href="#pop_shinhangroup" data-ui="popup">
+													<img src="./images/work/img_work_shinhangroup.png" alt="">
+													<span class="overlay">신한금융지주 AI 플랫폼 제안 (2017)</span>
+												</a>
+											</div>
+											<div class="work_item">
+												<a href="#pop_samsungsds" data-ui="popup">
+													<img src="./images/work/img_work_samsungsds.png" alt="">
+													<span class="overlay">삼성SDS 웹 솔루션 개편 (2016)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="work_wrap">
+											<div class="work_item">
+												<a href="#pop_shinhanbank3" data-ui="popup">
+													<img src="./images/work/img_work_shinhanbank.png" alt="">
+													<span class="overlay">신한은행 신한S뱅킹 (2015)</span>
+												</a>
+											</div>
+											<div class="work_item">
+												<a href="#pop_hanssem" data-ui="popup">
+													<img src="./images/work/img_work_hanssem.png" alt="">
+													<span class="overlay">한샘 패밀리 사이트 운영/구축 (2014)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+									<div class="swiper-slide">
+										<div class="work_wrap">
+											<div class="work_item">
+												<a href="#pop_artndesign" data-ui="popup">
+													<img src="./images/work/img_work_artndesign.png" alt="">
+													<span class="overlay">아트앤디자인 사이트 운영 (2012)</span>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+									
+								<div class="swiper-pagination"></div>
+								<!-- <div class="swiper-button-prev"></div>
+								<div class="swiper-button-next"></div> -->
+							</div>
+						</div>
+					</div>
+				</section>
+				<section class="sec_contact" data-anchor="contact">
+					<div class="inner">
+						<div class="head">
+							<h2 class="s_tit">대화를 환영합니다.</h2>
+							<p class="s_txt">언제든지 연락주세요.</p>
+						</div>
+						<div class="cont">
+							<div class="contact_box">
+								<div class="img">
+									<img src="./images/contents/img_view.png" alt="">
+								</div>
+								<ul class="list">
+									<li>
+										<i class="ic_mail"></i>
+										<span class="txt">seungchan85@gmail.com</span>
+									</li>
+									<li>
+										<i class="ic_kakao"></i>
+										<span class="txt">schlee85</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer id="footer">
+				<p class="closing">&quot;감사합니다.&quot;</p>
+				<p class="copy">Copyright 2024. Seungchan Lee. All rights reserved.</p>
+			</footer>
+		</div>
+
+		<!-- Popup : start -->
+		<div class="popup_wrap" id="pop_kbbank">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 국민은행 기업 운영</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2023.03 ~ 2023.08</li>
+						<li>기업 채널 20여개(PC, Mobile, Tablet) 운영.</li>
+						<li>PL 역할 수행.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_thehyundai">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 현대백화점 고도화</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2022.11 ~ 2023.02</li>
+						<li>현대백화점 PC/Mobile 고도화.</li>
+						<li>지점안내, 층별안내 등 담당.</li>
+						<li>PA 역할 수행.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_ssg">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 SSG닷컴 운영</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2022.06 ~ 2022.09</li>
+						<li>신규 이벤트 및 사이트 유지 보수.</li>
+						<li>상품 상세 화면 고도화 담당.</li>
+						<li>PA 역할 수행.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_lgcns">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 LGCNS singlex portal</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2021.11 ~ 2022.04</li>
+						<li>LGCNS 각 계열사들 및 협력 업체 간 연계 서비스.</li>
+						<li>Vuejs 퍼블리싱 구축.</li>
+						<li>PL/PA 역할 수행. (1인 투입)</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_runable">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 러너블 구축</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2021.07 ~ 2021.11</li>
+						<li>오프라인 러닝 앱 구축.</li>
+						<li>바이널씨/제이컨텐트리(JTBC) 공동으로 제작.</li>
+						<li>PL 역할 수행.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_shinhanbank">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 신한은행 MY자산 고도화</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2020.11 ~ 2022.05</li>
+						<li>자산 서비스 개편 및 App 고도화.</li>
+						<li>PA 역할 수행.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_tworld">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 티월드 운영</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2019.12 ~ 2020.09</li>
+						<li>신규 상품 및 사이트 유지 보수.</li>
+						<li>마이 페이지 React 고도화 퍼블리싱 참여.</li>
+						<li>PA 역할 수행.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_kbcard">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 국민카드 차세대 고도화</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2019.02 ~ 2019.09</li>
+						<li>개인 영역 차세대 고도화.</li>
+						<li>PA 역할 수행.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_hanwhalife">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 한화생명 온슈어 개편</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2018.10 ~ 2018.11</li>
+						<li>한화생명 상품 개편 및 고도화.</li>
+						<li>PA 역할 수행.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_shinhanbank2">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 신한은행 쉐어드&amp;판클럽 통합 구축</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2018.05 ~ 2018.08</li>
+						<li>2개 앱 통합 고도화 프로젝트.</li>
+						<li>PL 역할 수행.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_lottelife">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 롯데손해보험 퇴직연금 구축</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2017.12 ~ 2018.02</li>
+						<li>퇴직연금 사이트 개편.</li>
+						<li>PL/PA 역할 수행. (1인 투입)</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_jejubank">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 제주은행 제주S뱅킹</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2017.05 ~ 2017.10</li>
+						<li>모바일 APP 신규 구축.</li>
+						<li>PA 역할 수행.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_shinhangroup">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 신한금융지주 AI 플랫폼 제안</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2017.03 ~ 2017.04</li>
+						<li>대화형 AI 기능 제안 프로젝트.</li>
+						<li>PL/PA 역할 수행. (1인 투입)</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_samsungsds">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 삼성SDS 웹 솔루션 개편</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2016.05 ~ 2017.01</li>
+						<li>내부 직원용 교육 사이트 개편.</li>
+						<li>PA 역할 수행.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_shinhanbank3">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 신한은행 신한S뱅킹</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2015.10 ~ 2016.02</li>
+						<li>개인뱅킹 모바일 APP 신규 구축.</li>
+						<li>PA 역할 수행.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_hanssem">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 한샘 패밀리 사이트 운영/구축</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2014.04 ~ 2015.05</li>
+						<li>한샘, 인테리어, 키친, IK 사이트 운영.</li>
+						<li>PA 역할 수행.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<div class="popup_wrap" id="pop_artndesign">
+			<div class="inner">
+				<div class="popup_head">
+					<h1>📌 아트앤디자인 사이트 운영</h1>
+				</div>
+				<div class="popup_cont">
+					<ul>
+						<li>기간 : 2011.12 ~ 2013.12</li>
+						<li>아트앤디자인 홈페이지 관리 및 게시물 등록.</li>
+						<li>광고 배너 및 상품 상세페이지 제작.</li>
+						<li>입시 설명회 시연 동영상 및 PPT 제작.</li>
+					</ul>
+				</div>
+				<button type="button" class="popup_close">
+					<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+				</button>
+			</div>
+		</div>
+		<!-- Popup : end -->
+
+	</body>
+</html>
