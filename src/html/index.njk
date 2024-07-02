@@ -1,0 +1,29 @@
+{%- extends "./_templates/_layout.njk" -%}
+{%- import './_templates/_macro/_include.njk' as macro -%}
+
+{%- block content -%}
+	{{ macro.include("_templates/_include/_contents/_home.njk") | tabIndent(1) }}
+	{{ macro.include("_templates/_include/_contents/_about.njk") | tabIndent(1) }}
+	{{ macro.include("_templates/_include/_contents/_work.njk") | tabIndent(1) }}
+	{{ macro.include("_templates/_include/_contents/_contact.njk") | tabIndent(1) }}
+{#  #}
+	{%- for item in popup_data %}
+	<div class="popup_wrap" id={{ item.id }}>
+		<div class="inner">
+			<div class="popup_head">
+				<h1>{{ item.title }}</h1>
+			</div>
+			<div class="popup_cont">
+				<ul>
+					{%- for desc_text in item.desc %}
+					<li>{{ desc_text }}</li>
+					{%- endfor %}
+				</ul>
+			</div>
+			<button type="button" class="popup_close">
+				<i class="ic_close"><span class="blind">팝업 닫기</span></i>
+			</button>
+		</div>
+	</div>
+	{%- endfor %}
+{%- endblock -%}

@@ -1,0 +1,4 @@
+{#- 사용자 정의 함수를 사용하기 위해 include를 함수 형태로 담아둠 -#}
+{% macro include(fileName) %}
+	{%- include fileName ignore missing -%}
+{% endmacro %}
