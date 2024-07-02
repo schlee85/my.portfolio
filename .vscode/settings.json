@@ -1,0 +1,11 @@
+{
+	// nunjucks 에서 emmet 사용
+	"emmet.includeLanguages": {
+		"njk": "html",
+		"nunjucks": "html"
+	},
+	// njk 파일에 html 언어 연결
+	"files.associations": {
+		"*.njk": "html"
+	},
+}

@@ -1,0 +1,30 @@
+/* blind */
+.blind {
+	display: inline-block;
+	position: absolute;
+	z-index: -10;
+	width: 0 !important;
+	height: 0 !important;
+	overflow: hidden !important;
+	font-size: medium;
+	line-height: normal;
+	word-break: break-all;
+	opacity: 0 !important;
+}
+
+/* break */
+br.pc {
+	display: block;
+}
+br.mo {
+	display: none;
+}
+
+@media (max-width:1023px) {
+	br.pc {
+		display: none;
+	}
+	br.mo {
+		display: block;
+	}
+}

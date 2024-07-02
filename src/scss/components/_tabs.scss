@@ -1,0 +1,38 @@
+/* Tabs */
+.tab_wrap {
+
+	.tab_head {
+		display: flex;
+
+		a {
+			position: relative;
+			margin-right: 2rem;
+			padding: 1.2rem 0;
+			transition: color 0.2s ease-in-out;
+		}
+
+		a::after {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 0;
+			height: 0.2rem;
+			background-color: #eee;
+			transition: width 0.2s ease-in-out;
+		}
+
+		a.active {
+			color: var(--color-point);
+		}
+
+		a.active::after {
+			width: 100%;
+		}
+	}
+
+	.tab_cont {
+		padding-top: 2rem;
+		height: 18rem;
+	}
+}

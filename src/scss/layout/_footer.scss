@@ -1,0 +1,21 @@
+/* Footer */
+#footer {
+	padding: 6rem 0;
+	background: #000;
+	color: #fff;
+	text-align: center;
+
+	.closing {
+		padding: 2rem 0 4rem;
+	}
+
+	.copy {
+		font-size: 1.2rem;
+	}
+}
+
+@media (max-width:1023px) {
+	#footer {
+		padding-bottom: 12rem;
+	}
+}

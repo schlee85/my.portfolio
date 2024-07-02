@@ -1,0 +1,34 @@
+{#- include 사용자 정의 함수 -#}
+{%- import './_macro/_include.njk' as macro -%}
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Seungchan's Portfolio Website</title>
+	<link rel="stylesheet" href="./css/ui.css">
+</head>
+<body>
+	<div class="wrap">
+		{{ macro.include("_templates/_include/_layout/_skip.njk") | tabIndent(2) }}
+
+		{{ macro.include("_templates/_include/_layout/_header.njk") | tabIndent(2) }}
+
+		{{ macro.include("_templates/_include/_layout/_nav.njk") | tabIndent(2) }}
+
+		<main id="content">
+			{% filter tabIndent(2) %}
+				{% block content %}
+				{% endblock %}
+			{%- endfilter %}
+		</main>
+
+		{{ macro.include("_templates/_include/_layout/_footer.njk") | tabIndent(2) }}
+	</div>
+
+	<script src="./js/lib/jquery-3.7.1.min.js"></script>
+	<script src="./js/lib/swiper-11.1.3.min.js"></script>
+	<script src="./js/ui.js"></script>
+</body>
+</html>
