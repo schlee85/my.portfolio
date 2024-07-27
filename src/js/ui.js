@@ -127,7 +127,7 @@ app.onScroll = {
 
 		var hasSwiper = $(e.target).closest('.swiper').length;
 		var hasPopup = $('.popup_wrap.active').length;
-		var hasTabs = $(e.target).closest('.tab_wrap').length;
+		var hasTabs = $(e.target).closest('.tab_head').length;
 		if (hasSwiper || hasPopup || hasTabs) return;
 
 		if (this.touchStart < this.touchEnd) {
