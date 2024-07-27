@@ -52,38 +52,7 @@ app.tabs = {
 	}
 }
 
-/* GNB 스크롤 이동 */
-app.goScroll = {
-	name: 'app.goScroll',
-
-	init: function() {
-		this.createSelector();
-		this.addEvents();
-		app.console.log(this.name);
-	},
-
-	createSelector: function() {
-		this.ctrlName = '[data-href]';
-		this.$ctrl = app.$body.find(this.ctrlName);
-	},
-
-	addEvents: function() {
-		this.$ctrl.on('click', this.handleClick.bind(this));
-	},
-
-	handleClick: function(e) {
-		e.preventDefault();
-
-		var href = $(e.currentTarget).data('href');
-		var offsetTop = $('[data-anchor=' + href + ']').offset().top;
-
-		$('html, body').stop().animate({
-			scrollTop: offsetTop
-		}, 300);
-	},
-}
-
-/* GNB 스크롤 감지 */
+// 본문 스크롤 감지
 app.onScroll = {
 	name: 'app.onScroll',
 
@@ -94,33 +63,115 @@ app.onScroll = {
 	},
 
 	createSelector: function() {
-		this.$gnb = app.$body.find('.gnb');
+		this.$sliderWrap = app.$body.find('#content');
+		this.$sliderItem = this.$sliderWrap.find('> [class^="sec_"]');
+		this.$pagingWrap = app.$body.find('#nav .gnb');
+		this.$pagingItem = this.$pagingWrap.find('> li');
+		this.$pagingCtrl = this.$pagingItem.find('> a');
+
+		this.currentIdx = 0;
+		this.animation_state = false;
+		this.touchStart = null;
+		this.touchEnd = null;
+
+		// 메인 버튼
+		this.$mainBtn = app.$body.find('.btn_goabout');
 	},
 
 	addEvents: function() {
-		app.$window.on('scroll', this.handleScroll.bind(this));
+		this.$sliderItem.each(function(idx) {
+			$(this).css('transform', 'translateY(' + (idx * 100) + '%)');
+		});
+
+		this.$pagingItem.each(function(idx) {
+			$(this).attr('data-slide', idx);
+		});
+
+		this.$pagingCtrl.on('click', this.handleClickGNB.bind(this));
+		this.$mainBtn.on('click', this.handleClickBtn.bind(this));	// 메인 버튼
+		this.$sliderWrap.on('mousewheel', this.handleWheel.bind(this));
+		this.$sliderWrap.on('touchstart', this.handleTouchStart.bind(this));
+		this.$sliderWrap.on('touchend', this.handleTouchEnd.bind(this));
+		this.$sliderWrap.on('touchmove', this.handleTouchMove.bind(this));
 	},
 
-	handleScroll: function() {
-		var winTop = app.$window.scrollTop();
-		var ancHome = app.$body.find('[data-anchor=home]').offset().top;
-		var ancAbout = Math.floor(app.$body.find('[data-anchor=about]').offset().top);
-		var ancWork = Math.floor(app.$body.find('[data-anchor=work]').offset().top);
-		var ancContact = Math.floor(app.$body.find('[data-anchor=contact]').offset().top);
+	handleClickGNB: function(e) {
+		if (this.animation_state) return;
+		e.preventDefault();
 
-		if (winTop >= ancHome && winTop < ancAbout) {
-			this._setActiveGnb(0);
-		} else if (winTop >= ancAbout && winTop < ancWork) {
-			this._setActiveGnb(1);
-		} else if (winTop >= ancWork && winTop < ancContact) {
-			this._setActiveGnb(2);
-		} else if (winTop >= ancContact) {
-			this._setActiveGnb(3);
+		var idx = $(e.currentTarget).closest('li').attr('data-slide');
+		this._gotoNum(idx);
+	},
+
+	// 메인 버튼
+	handleClickBtn: function() {
+		this._gotoNext();
+	},
+
+	handleWheel: function(e) {
+		if (this.animation_state) return;
+		e.preventDefault();
+
+		if(e.originalEvent.deltaY > 0) {
+			this._gotoNext();
+		} else if(e.originalEvent.deltaY < 0) {
+			this._gotoPrev();
 		}
 	},
 
-	_setActiveGnb: function(index) {
-		this.$gnb.find('> li').eq(index).addClass('active').siblings().removeClass('active');
+	handleTouchMove: function(e) {
+		var hasSwiper = $(e.target).closest('.swiper').length;
+		var isPopup = $('.popup_wrap.active').length;
+		if (hasSwiper || isPopup) return;
+
+		if (this.touchStart < this.touchEnd) {
+			this._gotoPrev();
+		} else {
+			this._gotoNext();
+		}
+	},
+
+	handleTouchStart: function(e) {
+		this.touchStart = e.touches[0].screenY;
+	},
+
+	handleTouchEnd: function(e) {
+		this.touchEnd = e.changedTouches[0].screenY;
+	},
+
+	_gotoNum: function(index) {
+		var that = this;
+		if (parseInt(index) != this.currentIdx && !this.animation_state) {
+
+			this.animation_state = true;
+			setTimeout(function() {
+				that.animation_state = false;
+			}, 1000);
+
+			this.$pagingItem.eq(this.currentIdx).removeClass('active');
+			this.currentIdx = parseInt(index);
+			this.$pagingItem.eq(this.currentIdx).addClass('active');
+
+			this.$sliderItem.each(function(idx) {
+				$(this).css('transform', 'translateY(' + -(that.currentIdx - idx) * 100 + '%)');
+			});
+		}
+	},
+
+	_gotoNext: function() {
+		if (this.currentIdx < this.$pagingItem.length - 1) {
+			this._gotoNum(this.currentIdx + 1);
+		} else {
+			return false;
+		}
+	},
+
+	_gotoPrev: function() {
+		if (this.currentIdx > 0) {
+			this._gotoNum(this.currentIdx - 1);
+		} else {
+			return false;
+		}
 	},
 }
 
@@ -161,6 +212,7 @@ app.popup = {
 	},
 
 	createSelector: function() {
+		this.$wrap = app.$body.find('.popup_wrap');
 		this.ctrlOpenName = '[data-ui=popup]';
 		this.ctrlCloseName = '.popup_close';
 		this.$ctrlOpen = app.$body.find(this.ctrlOpenName);
@@ -170,6 +222,13 @@ app.popup = {
 	addEvents: function() {
 		this.$ctrlOpen.on('click.popup', this.handleClickOpen.bind(this));
 		this.$ctrlClose.on('click.popup', this.handleClickClose.bind(this));
+
+		var that = this;
+		this.$wrap.on('click', function(e) {
+			if ($(this).has(e.target).length == 0) {
+				$(this).find(that.ctrlCloseName).trigger('click');
+			}
+		});
 	},
 
 	handleClickOpen: function(e) {
@@ -202,7 +261,6 @@ app.popup = {
 app.UI = {
 	init: function(){
 		app.hasJqueryObject( app.$body.find('[data-ui=tabs]') ) && app.tabs.init();
-		app.hasJqueryObject( app.$body.find('[data-href]') ) && app.goScroll.init();
 		app.hasJqueryObject( app.$body.find('[data-ui=swiper]') ) && app.swiper.init();
 		app.hasJqueryObject( app.$body.find('[data-ui=popup]') ) && app.popup.init();
 		app.onScroll.init();
