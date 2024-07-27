@@ -126,8 +126,9 @@ app.onScroll = {
 		this.touchEnd = e.changedTouches[0].screenY;
 
 		var hasSwiper = $(e.target).closest('.swiper').length;
-		var isPopup = $('.popup_wrap.active').length;
-		if (hasSwiper || isPopup) return;
+		var hasPopup = $('.popup_wrap.active').length;
+		var hasTabs = $(e.target).closest('.tab_wrap').length;
+		if (hasSwiper || hasPopup || hasTabs) return;
 
 		if (this.touchStart < this.touchEnd) {
 			this._gotoPrev();
