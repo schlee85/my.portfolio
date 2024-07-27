@@ -92,7 +92,6 @@ app.onScroll = {
 		this.$sliderWrap.on('mousewheel', this.handleWheel.bind(this));
 		this.$sliderWrap.on('touchstart', this.handleTouchStart.bind(this));
 		this.$sliderWrap.on('touchend', this.handleTouchEnd.bind(this));
-		this.$sliderWrap.on('touchmove', this.handleTouchMove.bind(this));
 	},
 
 	handleClickGNB: function(e) {
@@ -119,7 +118,13 @@ app.onScroll = {
 		}
 	},
 
-	handleTouchMove: function(e) {
+	handleTouchStart: function(e) {
+		this.touchStart = e.touches[0].screenY;
+	},
+
+	handleTouchEnd: function(e) {
+		this.touchEnd = e.changedTouches[0].screenY;
+
 		var hasSwiper = $(e.target).closest('.swiper').length;
 		var isPopup = $('.popup_wrap.active').length;
 		if (hasSwiper || isPopup) return;
@@ -129,14 +134,6 @@ app.onScroll = {
 		} else {
 			this._gotoNext();
 		}
-	},
-
-	handleTouchStart: function(e) {
-		this.touchStart = e.touches[0].screenY;
-	},
-
-	handleTouchEnd: function(e) {
-		this.touchEnd = e.changedTouches[0].screenY;
 	},
 
 	_gotoNum: function(index) {
